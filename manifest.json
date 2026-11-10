@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Snow Rider Controls",
+  "version": "0.7.3",
+  "description": "Invincibility, flight, super jump and autopilot for Snow Rider 3D on Hooda Math.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.hoodamath.com/mobile/games/snow-rider-3d/game.html*"
+      ],
+      "all_frames": true,
+      "world": "MAIN",
+      "run_at": "document_start",
+      "js": [
+        "wasm-patch.js",
+        "invincibility.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.hoodamath.com/mobile/games/snow-rider-3d/game.html*"
+      ],
+      "all_frames": true,
+      "world": "MAIN",
+      "run_at": "document_idle",
+      "js": [
+        "movement.js",
+        "loadouts.js",
+        "panel.js",
+        "content.js"
+      ]
+    }
+  ]
+}
